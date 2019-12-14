@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>IMU - Donkey Car(JP)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjp.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "IMU";
+    var mkdocs_page_input_path = "parts\\imu.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Donkey Car(JP)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">About Donkey&reg;</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contribute/">Contribute to Donkey</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../faq/">FAQ</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../legacy/">Legacy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../release/">Release notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../roll_your_own/">Roll Your Own Car</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../supported_cars/">Supported cars</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../tests/">Tests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../guide/build_hardware/">How to Build a Donkey&reg;</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/calibrate/">Calibrate your Car</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/create_application/">Create your car application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/get_driving/">Drive your car</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/install_software/">Install software</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/simulator/">Donkey Simulator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../guide/train_autopilot/">Train an autopilot with Keras</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Host pc</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../guide/host_pc/setup_mac/">Setup mac</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../guide/host_pc/setup_ubuntu/">Install Donkeycar on Linux</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../guide/host_pc/setup_windows/">Setup windows</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Robot sbc</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../guide/robot_sbc/setup_jetson_nano/">Get Your Jetson Nano Working</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../guide/robot_sbc/setup_raspberry_pi/">Get Your Raspberry Pi Working</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../guide/robot_sbc/tensorrt_jetson_nano/">A Guide to using TensorRT on the Nvidia Jetson Nano</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Parts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../about/">What is a Part</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../actuators/">Acutators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../controllers/">Controller Parts</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">IMU</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#imu">IMU</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#mpu6050">MPU6050</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../keras/">Keras Parts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../stores/">Stores</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utility</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../utility/donkey/">Donkey Command-line Utilities</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Donkey Car(JP)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Parts &raquo;</li>
+        
+      
+    
+    <li>IMU</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="imu">IMU</h1>
+<p>IMUs or inertial measurement units are parts that sense the inertial forces on a robot. They vary depending on sensor, but may commonly include linear and rotational accelleration. They may sometimes include magnetometer to give global compasss facing dir. Frequently temperature is available from these as it affects their sensitivity.</p>
+<h2 id="mpu6050">MPU6050</h2>
+<p>This is a cheap, small, and moderately precise imu. Commonly available at <a href="https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Dindustrial&amp;field-keywords=MPU6050">Amazon</a>.</p>
+<ul>
+<li>Typically uses the I2C interface and can be chained off the default PWM PCA9685 board. This configuration will also provide power.</li>
+<li>Outputs acceleration X, Y, Z, Gyroscope X, Y, Z, and temperature.</li>
+<li>Chip built-in 16bit AD converter, 16bit data output</li>
+<li>Gyroscopes range: +/- 250 500 1000 2000 degree/sec</li>
+<li>Acceleration range: ±2 ±4 ±8 ±16g</li>
+</ul>
+<h3 id="software-setup">Software Setup</h3>
+<p>Install smbus:</p>
+<p>from package:</p>
+<pre><code class="bash"> sudo apt install python3-smbus
+</code></pre>
+
+<p>or from source:</p>
+<pre><code class="bash">sudo apt-get install i2c-tools libi2c-dev python-dev python3-dev
+git clone https://github.com/pimoroni/py-smbus.git
+cd py-smbus/library
+python setup.py build
+sudo python setup.py install
+</code></pre>
+
+<p>Install pip lib for <code>mpu6050</code>:</p>
+<pre><code class="bash">pip install mpu6050-raspberrypi
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../keras/" class="btn btn-neutral float-right" title="Keras Parts">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../controllers/" class="btn btn-neutral" title="Controller Parts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../controllers/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../keras/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

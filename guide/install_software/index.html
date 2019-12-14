@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Install software - Donkey Car(JP)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjp.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Install software";
+    var mkdocs_page_input_path = "guide\\install_software.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Donkey Car(JP)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">About Donkey&reg;</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contribute/">Contribute to Donkey</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../faq/">FAQ</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../legacy/">Legacy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../release/">Release notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../roll_your_own/">Roll Your Own Car</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../supported_cars/">Supported cars</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../tests/">Tests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../build_hardware/">How to Build a Donkey&reg;</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../calibrate/">Calibrate your Car</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../create_application/">Create your car application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../get_driving/">Drive your car</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Install software</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#install-software">Install Software</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#overview">Overview</a></li>
+        
+            <li><a class="toctree-l4" href="#step-1-install-software-on-host-pc">Step 1: Install Software on Host PC</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#step-2-install-software-on-donkeycar">Step 2: Install Software On Donkeycar</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#optional-use-tensorrt-on-the-jetson-nano">[Optional] Use TensorRT on the Jetson Nano</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../simulator/">Donkey Simulator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../train_autopilot/">Train an autopilot with Keras</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Host pc</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../host_pc/setup_mac/">Setup mac</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../host_pc/setup_ubuntu/">Install Donkeycar on Linux</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../host_pc/setup_windows/">Setup windows</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Robot sbc</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../robot_sbc/setup_jetson_nano/">Get Your Jetson Nano Working</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../robot_sbc/setup_raspberry_pi/">Get Your Raspberry Pi Working</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../robot_sbc/tensorrt_jetson_nano/">A Guide to using TensorRT on the Nvidia Jetson Nano</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Parts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../parts/about/">What is a Part</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/actuators/">Acutators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/controllers/">Controller Parts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/imu/">IMU</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/keras/">Keras Parts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/stores/">Stores</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utility</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../utility/donkey/">Donkey Command-line Utilities</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Donkey Car(JP)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Guide &raquo;</li>
+        
+      
+    
+    <li>Install software</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="install-software">Install Software</h1>
+<ul>
+<li><a href="#Overview">Overview</a></li>
+<li>Software:<ul>
+<li><a href="./#step-1-install-software-on-host-pc">Step 1: Install Software on Host PC</a></li>
+<li><a href="./#step-2-install-software-on-donkeycar">Step 2: Install Software on Donkeycar</a></li>
+</ul>
+</li>
+<li><a href="/guide/create_application/">Create Donkeycar Application</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>Donkeycar has components to install on a host PC. This can be a laptop, or desktop machine. The machine doesn't have to be powerful, but it will benefit from faster cpu, more ram, and an NVidia GPU. An SSD hard drive will greatly impact your training times.</p>
+<p>Donkeycar software components need to be installed on the robot platform of your choice. Raspberry Pi and Jetson Nano have setup docs. But it has been known to work on Jetson TX2, Friendly Arm SBC, or almost any Debian based SBC ( single board computer ).</p>
+<p>After install, you will create the Donkeycar application from a template. This contains code that is designed for you to customize for your particular case. Don't worry, we will get you started with some useful defaults. </p>
+<p>Next we will train the Donkeycar to drive on it's own based on your driving style! This uses a supervised learning technique often referred to as behavioral cloning.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BQY9IgAxOO0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>This is not the only method for getting your Donkeycar to drive itself. But it requires the least amount of hardware and least technical knowledge. Then you can explore other techniques in this Ai mobile laboratory called Donkeycar!</p>
+<h2 id="step-1-install-software-on-host-pc">Step 1: Install Software on Host PC</h2>
+<p>When controlling your Donkey via behavioral cloning, you will need to setup a host pc to train your machine learning model from the data collected on the robot. Choose a setup that matches your computer OS.</p>
+<ul>
+<li>Setup <a href="../host_pc/setup_ubuntu/">Linux Host PC</a>
+<img alt="donkey" src="/assets/logos/linux_logo.png" /></li>
+<li>Setup <a href="../host_pc/setup_windows/">Windows Host PC</a>
+<img alt="donkey" src="/assets/logos/windows_logo.png" /></li>
+<li>Setup <a href="../host_pc/setup_mac/">Mac Host PC</a>
+<img alt="donkey" src="/assets/logos/apple_logo.jpg" /></li>
+</ul>
+<h1 id="step-2-install-software-on-donkeycar">Step 2: Install Software On Donkeycar</h1>
+<p>This guide will help you to setup the software to run Donkeycar on your Raspberry Pi or Jetson Nano. Choose a setup that matches your SBC type. (SBC = single board computer)</p>
+<ul>
+<li>
+<p>Setup <a href="../robot_sbc/setup_raspberry_pi/">RaspberryPi</a>
+<img alt="donkey" src="/assets/logos/rpi_logo.png" /></p>
+</li>
+<li>
+<p>Setup <a href="../robot_sbc/setup_jetson_nano/">Jetson Nano</a>
+<img alt="donkey" src="/assets/logos/nvidia_logo.png" /></p>
+</li>
+</ul>
+<h2 id="optional-use-tensorrt-on-the-jetson-nano">[Optional] Use TensorRT on the Jetson Nano</h2>
+<p>Read <a href="/guide/robot_sbc/tensorrt_jetson_nano">this</a> for more information.</p>
+<h3 id="next-create-your-donkeycar-application">Next: <a href="/guide/create_application/">Create Your Donkeycar Application</a>.</h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../simulator/" class="btn btn-neutral float-right" title="Donkey Simulator">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../get_driving/" class="btn btn-neutral" title="Drive your car"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../get_driving/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../simulator/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

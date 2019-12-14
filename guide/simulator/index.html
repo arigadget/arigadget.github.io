@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Donkey Simulator - Donkey Car(JP)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjp.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Donkey Simulator";
+    var mkdocs_page_input_path = "guide\\simulator.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Donkey Car(JP)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">About Donkey&reg;</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contribute/">Contribute to Donkey</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../faq/">FAQ</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../legacy/">Legacy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../release/">Release notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../roll_your_own/">Roll Your Own Car</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../supported_cars/">Supported cars</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../tests/">Tests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../build_hardware/">How to Build a Donkey&reg;</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../calibrate/">Calibrate your Car</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../create_application/">Create your car application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../get_driving/">Drive your car</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../install_software/">Install software</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Donkey Simulator</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#donkey-simulator">Donkey Simulator</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#my-virtual-donkey">My Virtual Donkey</a></li>
+        
+            <li><a class="toctree-l4" href="#install">Install</a></li>
+        
+            <li><a class="toctree-l4" href="#drive">Drive</a></li>
+        
+            <li><a class="toctree-l4" href="#train">Train</a></li>
+        
+            <li><a class="toctree-l4" href="#test">Test</a></li>
+        
+            <li><a class="toctree-l4" href="#sample-driving-data">Sample Driving Data</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../train_autopilot/">Train an autopilot with Keras</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Host pc</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../host_pc/setup_mac/">Setup mac</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../host_pc/setup_ubuntu/">Install Donkeycar on Linux</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../host_pc/setup_windows/">Setup windows</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Robot sbc</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../robot_sbc/setup_jetson_nano/">Get Your Jetson Nano Working</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../robot_sbc/setup_raspberry_pi/">Get Your Raspberry Pi Working</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../robot_sbc/tensorrt_jetson_nano/">A Guide to using TensorRT on the Nvidia Jetson Nano</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Parts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../parts/about/">What is a Part</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/actuators/">Acutators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/controllers/">Controller Parts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/imu/">IMU</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/keras/">Keras Parts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../parts/stores/">Stores</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utility</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../utility/donkey/">Donkey Command-line Utilities</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Donkey Car(JP)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Guide &raquo;</li>
+        
+      
+    
+    <li>Donkey Simulator</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="donkey-simulator">Donkey Simulator</h1>
+<p>The <a href="https://github.com/tawnkramer/gym-donkeycar">Donkey Gym</a> project is a OpenAI gym wrapper around the <a href="https://github.com/tawnkramer/sdsandbox/tree/donkey">Self Driving Sandbox</a> donkey simulator. When building the sim from source, checkout the <code>donkey</code> branch of the <code>sdsandbox</code> project. </p>
+<p>The simulator is built on the the <a href="https://unity.com/">Unity</a> game platform, uses their internal physics and graphics, and connects to a donkey Python process to use our trained model to control the simulated Donkey.</p>
+<h2 id="my-virtual-donkey">My Virtual Donkey</h2>
+<p>There are many ways to use the simulator, depending on your goals. You can use the simulator to get to know and use the standard Donkeycar drive/train/test cycle by treating it as virtual hardware. You will collect data, drive, and train using the <strong>same commands</strong> as if you were using a real robot. We will walk through that use-case first.</p>
+<p><img alt="sim_screen_shot" src="../../assets/sim_screen_shot.png" /></p>
+<h2 id="install">Install</h2>
+<ul>
+<li>Download and unzip the simulator for your host pc platform from <a href="https://github.com/tawnkramer/gym-donkeycar/releases">Donkey Gym Release</a>.</li>
+<li>Place the simulator where you like. For this example it will be ~/projects/DonkeySimLinux. Your dir will have a different name depending on platform. </li>
+<li>Complete all the steps to <a href="../install_software/#step-1-install-software-on-host-pc">install Donkey on your host pc</a>.</li>
+<li>Setup DonkeyGym:</li>
+</ul>
+<pre><code class="bash">cd ~/projects
+git clone https://github.com/tawnkramer/gym-donkeycar
+conda activate donkey
+pip install -e gym-donkeycar
+</code></pre>
+
+<ul>
+<li>You may use an existing ~/mycar donkey application, or begin a new one. Here we will start fresh: </li>
+</ul>
+<pre><code class="bash">donkey createcar --path ~/mysim
+cd ~/mysim
+</code></pre>
+
+<ul>
+<li>Edit your myconfig.py to enable donkey gym simulator wrapper, replace <code>&lt;user-name</code> ad the other parts of the path:</li>
+</ul>
+<pre><code class="bash">DONKEY_GYM = True
+DONKEY_SIM_PATH = &quot;/home/&lt;user-name&gt;/projects/DonkeySimLinux/donkey_sim.x86_64&quot;
+DONKEY_GYM_ENV_NAME = &quot;donkey-generated-track-v0&quot;
+</code></pre>
+
+<blockquote>
+<p>Note: your path to the executable will vary depending on platform and user.</p>
+</blockquote>
+<h2 id="drive">Drive</h2>
+<p>You may use all the normal commands to manage.py at this point. Such as:</p>
+<pre><code class="bash">python manage.py drive
+</code></pre>
+
+<p>This should start the simulator and connect to it automatically. By default you will have a web interface to control the donkey. Navigate to <a href="http://localhost:8887/drive">http://localhost:8887/drive</a> to see control page.</p>
+<p>On Ubuntu Linux only, you may plug in your joystick of choice. If it mounts as <code>/dev/input/js0</code> then there's a good chance it will work. Modify myconfig.py to indicate your joystick model and use the <code>--js</code> arg to run.</p>
+<pre><code class="bash">python manage.py drive --js
+</code></pre>
+
+<p>As you drive, this will create a tub of records in your data dir as usual.</p>
+<h2 id="train">Train</h2>
+<p>You will not need to rsync your data, as it was recorded and resides locally. You can train as usual:</p>
+<pre><code class="bash">python manage.py train --model models/mypilot.h5
+</code></pre>
+
+<h2 id="test">Test</h2>
+<p>You can use the model as usual:</p>
+<pre><code class="bash">python manage.py drive --model models/mypilot.h5
+</code></pre>
+
+<p>Then navigate to web control page. Set <code>Mode and Pilot</code> to <code>Local Pilot(d)</code>. The car should start driving.</p>
+<h2 id="sample-driving-data">Sample Driving Data</h2>
+<p>Here's some sample driving data to get you started. <a href="https://drive.google.com/open?id=1A5sTSddFsf494UDtnvYQBaEPYX87_LMp">Download this</a> and unpack it into your data dir. This should train to a slow but stable driver.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../train_autopilot/" class="btn btn-neutral float-right" title="Train an autopilot with Keras">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../install_software/" class="btn btn-neutral" title="Install software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../install_software/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../train_autopilot/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

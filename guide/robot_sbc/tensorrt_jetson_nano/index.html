@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>A Guide to using TensorRT on the Nvidia Jetson Nano - Donkey Car(JP)</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosansjp.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet">
+  <link href="../../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "A Guide to using TensorRT on the Nvidia Jetson Nano";
+    var mkdocs_page_input_path = "guide\\robot_sbc\\tensorrt_jetson_nano.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Donkey Car(JP)</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">About Donkey&reg;</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../contribute/">Contribute to Donkey</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../faq/">FAQ</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../legacy/">Legacy</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../release/">Release notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../roll_your_own/">Roll Your Own Car</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../supported_cars/">Supported cars</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../tests/">Tests</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../build_hardware/">How to Build a Donkey&reg;</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../calibrate/">Calibrate your Car</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../create_application/">Create your car application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../get_driving/">Drive your car</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../install_software/">Install software</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../simulator/">Donkey Simulator</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../train_autopilot/">Train an autopilot with Keras</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Host pc</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../host_pc/setup_mac/">Setup mac</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../host_pc/setup_ubuntu/">Install Donkeycar on Linux</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../host_pc/setup_windows/">Setup windows</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Robot sbc</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../setup_jetson_nano/">Get Your Jetson Nano Working</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../setup_raspberry_pi/">Get Your Raspberry Pi Working</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">A Guide to using TensorRT on the Nvidia Jetson Nano</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#a-guide-to-using-tensorrt-on-the-nvidia-jetson-nano">A Guide to using TensorRT on the Nvidia Jetson Nano</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#step-1-setup-tensorrt-on-ubuntu-machine">Step 1: Setup TensorRT on Ubuntu Machine</a></li>
+        
+            <li><a class="toctree-l5" href="#step-2-setup-tensorrt-on-your-jetson-nano">Step 2: Setup TensorRT on your Jetson Nano</a></li>
+        
+            <li><a class="toctree-l5" href="#step-3-train-freeze-and-export-your-model-to-tensorrt-format-uff">Step 3: Train, Freeze and Export your model to TensorRT format (uff)</a></li>
+        
+            <li><a class="toctree-l5" href="#step-4">Step 4</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Parts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../parts/about/">What is a Part</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../parts/actuators/">Acutators</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../parts/controllers/">Controller Parts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../parts/imu/">IMU</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../parts/keras/">Keras Parts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../parts/stores/">Stores</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Utility</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../utility/donkey/">Donkey Command-line Utilities</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Donkey Car(JP)</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Robot sbc &raquo;</li>
+        
+      
+        
+          <li>Guide &raquo;</li>
+        
+      
+    
+    <li>A Guide to using TensorRT on the Nvidia Jetson Nano</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="a-guide-to-using-tensorrt-on-the-nvidia-jetson-nano">A Guide to using TensorRT on the Nvidia Jetson Nano</h1>
+<hr />
+<ul>
+<li><strong>Note</strong> This guide assumes that you are using Ubuntu <code>18.04</code>. If you are using Windows refer to <a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html">these</a> instructions on how to setup your computer to use TensorRT.</li>
+</ul>
+<hr />
+<h2 id="step-1-setup-tensorrt-on-ubuntu-machine">Step 1: Setup TensorRT on Ubuntu Machine</h2>
+<p>Follow the instructions <a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html#installing-tar">here</a>. Make sure you use the <code>tar</code> file instructions unless you have previously installed CUDA using <code>.deb</code> files.</p>
+<h2 id="step-2-setup-tensorrt-on-your-jetson-nano">Step 2: Setup TensorRT on your Jetson Nano</h2>
+<ul>
+<li>Setup some environment variables so <code>nvcc</code> is on <code>$PATH</code>. Add the following lines to your <code>~/.bashrc</code> file.</li>
+</ul>
+<pre><code class="bash"># Add this to your .bashrc file
+export CUDA_HOME=/usr/local/cuda
+# Adds the CUDA compiler to the PATH
+export PATH=$CUDA_HOME/bin:$PATH
+# Adds the libraries
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+</code></pre>
+
+<ul>
+<li>Test the changes to your <code>.bashrc</code>.</li>
+</ul>
+<pre><code class="bash">source ~/.bashrc
+nvcc --version
+</code></pre>
+
+<p>You should see something like:</p>
+<pre><code class="text">nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2018 NVIDIA Corporation
+Built on ...
+Cuda compilation tools, release 10.0, Vxxxxx
+</code></pre>
+
+<ul>
+<li>Switch to your <code>virtualenv</code> and install PyCUDA.</li>
+</ul>
+<pre><code class="bash"># This takes a a while.`
+pip install pycuda
+</code></pre>
+
+<ul>
+<li>After this you will also need to setup <code>PYTHONPATH</code> such that your <code>dist-packages</code> are included as part of your <code>virtualenv</code>. Add this to your <code>.bashrc</code>. This needs to be done because the python bindings to <code>tensorrt</code> are available in <code>dist-packages</code> and this folder is usually not visible to your virtualenv. To make them visible we add it to <code>PYTHONPATH</code>.</li>
+</ul>
+<pre><code class="bash">export PYTHONPATH=/usr/lib/python3.6/dist-packages:$PYTHONPATH
+</code></pre>
+
+<ul>
+<li>Test this change by switching to your <code>virtualenv</code> and importing <code>tensorrt</code>.</li>
+</ul>
+<pre><code class="python">&gt; import tensorrt as trt
+&gt; # This import should succeed
+</code></pre>
+
+<h2 id="step-3-train-freeze-and-export-your-model-to-tensorrt-format-uff">Step 3: Train, Freeze and Export your model to TensorRT format (<code>uff</code>)</h2>
+<p>After you train the <code>linear</code> model you end up with a file with a <code>.h5</code> extension.</p>
+<pre><code class="bash"># You end up with a Linear.h5 in the models folder
+python manage.py train --model=./models/Linear.h5 --tub=./data/tub_1_19-06-29,...
+# Freeze model using freeze_model.py in donkeycar/scripts
+# The frozen model is stored as protocol buffers.
+# This command also exports some metadata about the model which is saved in ./models/Linear.metadata
+python freeze_model.py --model=./models/Linear.h5 --output=./models/Linear.pb
+# Convert the frozen model to UFF. The command below creates a file ./models/Linear.uff
+convert-to-uff ./models/Linear.pb
+</code></pre>
+
+<p>Now copy the converted <code>uff</code> model and the <code>metadata</code> to your Jetson Nano.</p>
+<h2 id="step-4">Step 4</h2>
+<ul>
+<li>In <code>myconfig.py</code> pick the model type as <code>tensorrt_linear</code>.</li>
+</ul>
+<pre><code class="python">DEFAULT_MODEL_TYPE = `tensorrt_linear`
+</code></pre>
+
+<ul>
+<li>Finally you can do</li>
+</ul>
+<pre><code class="bash"># After you scp your `uff` model to the Nano
+python manage.py drive --model=./models/Linear.uff
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../parts/about/" class="btn btn-neutral float-right" title="What is a Part">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../setup_raspberry_pi/" class="btn btn-neutral" title="Get Your Raspberry Pi Working"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../setup_raspberry_pi/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../parts/about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
